@@ -10,7 +10,7 @@ class InputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("NIC Decoder")),
+      appBar: AppBar(title: const Text("Sri Lankan NIC Details Extractor")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -20,7 +20,7 @@ class InputScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: controller.decodeNIC,
-              child: const Text("Decode NIC"),
+              child: const Text("Extract Details"),
             ),
           ],
         ),
