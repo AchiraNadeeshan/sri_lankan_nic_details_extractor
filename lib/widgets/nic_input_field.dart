@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../controllers/nic_controller.dart';
 
 class NICInputField extends StatelessWidget {
