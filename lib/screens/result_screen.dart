@@ -17,14 +17,14 @@ class ResultScreen extends StatelessWidget {
           children: [
             // Title moved down a bit
             Padding(
-              padding: const EdgeInsets.only(top: 40.0),
+              padding: const EdgeInsets.only(top: 80.0),
               child: const Text(
                 "NIC Details",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
             // Details section
-            const SizedBox(height: 20), // Spacing between title and details
+            const SizedBox(height: 40), // Spacing between title and details
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: controller.nicDetails.entries
@@ -33,11 +33,11 @@ class ResultScreen extends StatelessWidget {
                   .toList(),
             ),
             // Add space before the back button
-            const SizedBox(height: 20), // Space between details and back button
+            const SizedBox(height: 50), // Space between details and back button
             // Back button placed below the details but not too low
             ElevatedButton(
               onPressed: () => Get.back(),
-              child: const Text('Go Back'),
+              child: const Text('GO BACK'),
             ),
           ],
         ),

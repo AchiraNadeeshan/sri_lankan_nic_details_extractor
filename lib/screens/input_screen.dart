@@ -13,20 +13,24 @@ class InputScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Sri Lankan\nNIC Details Extractor",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            const SizedBox(height: 200), // Adjusted top padding for title
+            const Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                "Sri Lankan\nNIC Details Extractor",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
             ),
-            const SizedBox(height: 50), // Space between title and input field
+            const SizedBox(height: 80), // Space between title and input field
             NICInputField(controller: controller),
-            const SizedBox(height: 20), // Space between input and button
+            const SizedBox(height: 20), // Space between input field and button
             ElevatedButton(
               onPressed: controller.decodeNIC,
               child: const Text("EXTRACT"),
             ),
+            const SizedBox(height: 50), // Adjusted bottom spacing
           ],
         ),
       ),
