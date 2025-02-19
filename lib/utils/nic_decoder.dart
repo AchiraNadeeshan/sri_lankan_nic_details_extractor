@@ -19,7 +19,7 @@ class NICDecoder {
 
     return {
       "Birth Year": birthYear,
-      "Date of Birth": "${birthDate.year}-${birthDate.month}-${birthDate.day}",
+      "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
       "Age": age,
       "Gender": gender,
@@ -38,7 +38,7 @@ class NICDecoder {
 
     return {
       "Birth Year": birthYear,
-      "Date of Birth": "${birthDate.year}-${birthDate.month}-${birthDate.day}",
+      "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
       "Age": age,
       "Gender": gender,
@@ -47,13 +47,21 @@ class NICDecoder {
   }
 
   static DateTime _calculateDate(int year, int dayOfYear) {
-    // Define days per month with normal February (28 days)
-    List<int> monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-    // Adjust February for leap years
-    if (_isLeapYear(year)) {
-      monthDays[1] = 29;
-    }
+    // Always use leap year calculation (29 days in February)
+    const List<int> monthDays = [
+      31,
+      29,
+      31,
+      30,
+      31,
+      30,
+      31,
+      31,
+      30,
+      31,
+      30,
+      31
+    ];
 
     int month = 1;
     while (dayOfYear > monthDays[month - 1]) {
@@ -64,8 +72,8 @@ class NICDecoder {
     return DateTime(year, month, dayOfYear);
   }
 
-  static bool _isLeapYear(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+  static String _formatDate(DateTime date) {
+    return "${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}";
   }
 
   static String _getWeekdayName(int weekday) {
@@ -77,6 +85,6 @@ class NICDecoder {
       "Thursday",
       "Friday",
       "Saturday"
-    ][weekday - 1];
+    ][weekday % 7];
   }
 }
