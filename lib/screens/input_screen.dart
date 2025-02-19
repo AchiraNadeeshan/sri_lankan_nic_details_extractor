@@ -20,7 +20,7 @@ class InputScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: controller.decodeNIC,
-              child: const Text("Extract Details"),
+              child: const Text("EXTRACT"),
             ),
           ],
         ),
