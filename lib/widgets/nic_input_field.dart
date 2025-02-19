@@ -8,6 +8,7 @@ class NICInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller.textController, // Bind controller to input field
       onChanged: (value) => controller.nicNumber.value = value.toUpperCase(),
       decoration: const InputDecoration(
         border: OutlineInputBorder(),

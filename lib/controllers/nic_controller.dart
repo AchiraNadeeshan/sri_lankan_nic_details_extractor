@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../utils/nic_decoder.dart';
 
 class NICController extends GetxController {
   var nicNumber = ''.obs;
   var nicDetails = {}.obs;
+  final textController = TextEditingController(); // Added text controller
 
   void decodeNIC() {
     if (nicNumber.value.isEmpty) {
@@ -19,5 +21,10 @@ class NICController extends GetxController {
     }
     nicDetails.value = result;
     Get.toNamed('/result');
+  }
+
+  void resetNIC() {
+    nicNumber.value = '';
+    textController.clear(); // Clears the input field visually
   }
 }

@@ -25,10 +25,22 @@ class InputScreen extends StatelessWidget {
             ),
             const SizedBox(height: 80), // Space between title and input field
             NICInputField(controller: controller),
-            const SizedBox(height: 20), // Space between input field and button
-            ElevatedButton(
-              onPressed: controller.decodeNIC,
-              child: const Text("EXTRACT"),
+            const SizedBox(height: 20), // Space between input field and buttons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: controller.decodeNIC,
+                  child: const Text("EXTRACT"),
+                ),
+                const SizedBox(width: 20), // Space between buttons
+                ElevatedButton(
+                  onPressed:
+                      controller.resetNIC, // Use resetNIC() from NICController
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  child: const Text("RESET"),
+                ),
+              ],
             ),
             const SizedBox(height: 50), // Adjusted bottom spacing
           ],
