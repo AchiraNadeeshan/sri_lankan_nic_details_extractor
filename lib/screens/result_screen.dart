@@ -10,14 +10,36 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("NIC Details")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: controller.nicDetails.entries
-              .map((e) => ResultCard(title: e.key, value: e.value.toString()))
-              .toList(),
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Title moved down a bit
+            Padding(
+              padding: const EdgeInsets.only(top: 40.0),
+              child: const Text(
+                "NIC Details",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
+            // Details section
+            const SizedBox(height: 20), // Spacing between title and details
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: controller.nicDetails.entries
+                  .map((e) =>
+                      ResultCard(title: e.key, value: e.value.toString()))
+                  .toList(),
+            ),
+            // Add space before the back button
+            const SizedBox(height: 20), // Space between details and back button
+            // Back button placed below the details but not too low
+            ElevatedButton(
+              onPressed: () => Get.back(),
+              child: const Text('Go Back'),
+            ),
+          ],
         ),
       ),
     );
