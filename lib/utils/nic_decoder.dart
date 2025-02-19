@@ -47,7 +47,21 @@ class NICDecoder {
   }
 
   static DateTime _calculateDate(int year, int dayOfYear) {
-    return DateTime(year, 1, 1).add(Duration(days: dayOfYear - 1)); // Fix here
+    // Define days per month with normal February (28 days)
+    List<int> monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Adjust February for leap years
+    if (_isLeapYear(year)) {
+      monthDays[1] = 29;
+    }
+
+    int month = 1;
+    while (dayOfYear > monthDays[month - 1]) {
+      dayOfYear -= monthDays[month - 1];
+      month++;
+    }
+
+    return DateTime(year, month, dayOfYear);
   }
 
   static bool _isLeapYear(int year) {
