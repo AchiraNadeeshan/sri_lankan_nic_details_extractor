@@ -14,14 +14,31 @@ class NICDecoder {
     String gender = dayOfYear > 500 ? "Female" : "Male";
     if (dayOfYear > 500) dayOfYear -= 500;
     DateTime birthDate = _calculateDate(birthYear, dayOfYear);
-    int age = DateTime.now().year - birthDate.year;
+
+    // Age calculation in years, months, and days
+    DateTime today = DateTime.now();
+    int ageInYears = today.year - birthDate.year;
+    int ageInMonths = today.month - birthDate.month;
+    int ageInDays = today.day - birthDate.day;
+
+    if (ageInMonths < 0) {
+      ageInYears--;
+      ageInMonths += 12;
+    }
+    if (ageInDays < 0) {
+      ageInMonths--;
+      ageInDays +=
+          DateTime(today.year, today.month, 0).day; // Days in previous month
+    }
+
     String voteEligibility = nic.endsWith('V') ? "Can Vote" : "Cannot Vote";
 
     return {
       "NIC Format": "Old NIC",
       "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
-      "Age": age,
+      "Age":
+          "$ageInYears years, $ageInMonths months, $ageInDays days", // Updated age format
       "Gender": gender,
       "Serial Number": nic.substring(5, 9),
       "Voting Eligibility": voteEligibility,
@@ -34,13 +51,29 @@ class NICDecoder {
     String gender = dayOfYear > 500 ? "Female" : "Male";
     if (dayOfYear > 500) dayOfYear -= 500;
     DateTime birthDate = _calculateDate(birthYear, dayOfYear);
-    int age = DateTime.now().year - birthDate.year;
+
+    // Age calculation in years, months, and days
+    DateTime today = DateTime.now();
+    int ageInYears = today.year - birthDate.year;
+    int ageInMonths = today.month - birthDate.month;
+    int ageInDays = today.day - birthDate.day;
+
+    if (ageInMonths < 0) {
+      ageInYears--;
+      ageInMonths += 12;
+    }
+    if (ageInDays < 0) {
+      ageInMonths--;
+      ageInDays +=
+          DateTime(today.year, today.month, 0).day; // Days in previous month
+    }
 
     return {
       "NIC Format": "New NIC",
       "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
-      "Age": age,
+      "Age":
+          "$ageInYears years, $ageInMonths months, $ageInDays days", // Updated age format
       "Gender": gender,
       "Serial Number": nic.substring(7),
     };
