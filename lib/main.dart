@@ -18,7 +18,7 @@ class NICApp extends StatelessWidget {
       title: 'NIC Details Extractor',
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.grey,
+        colorSchemeSeed: Colors.blue,
       ),
       initialBinding: NICBinding(),
       initialRoute: '/',

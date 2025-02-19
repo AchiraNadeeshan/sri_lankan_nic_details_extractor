@@ -10,6 +10,7 @@ class InputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF181825), // Custom background color
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -20,7 +21,11 @@ class InputScreen extends StatelessWidget {
               child: Text(
                 "Sri Lankan\nNIC Details Extractor",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFA6E3A1),
+                ),
               ),
             ),
             const SizedBox(height: 80), // Space between title and input field
