@@ -31,14 +31,33 @@ class InputScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: controller.decodeNIC,
-                  child: const Text("EXTRACT"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(15), // Rounded corners
+                    ),
+                  ),
+                  child: const Text(
+                    "EXTRACT",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 const SizedBox(width: 20), // Space between buttons
                 ElevatedButton(
                   onPressed:
                       controller.resetNIC, // Use resetNIC() from NICController
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text("RESET"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(15), // Rounded corners
+                    ),
+                  ),
+                  child: const Text(
+                    "RESET",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),

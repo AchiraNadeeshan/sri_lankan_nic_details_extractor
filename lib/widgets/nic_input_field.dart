@@ -10,8 +10,22 @@ class NICInputField extends StatelessWidget {
     return TextField(
       controller: controller.textController, // Bind controller to input field
       onChanged: (value) => controller.nicNumber.value = value.toUpperCase(),
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 2),
+          borderRadius:
+              BorderRadius.circular(20), // Wounded look with rounded corners
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+              color: Colors.grey, width: 2), // Highlight color on focus
+          borderRadius: BorderRadius.circular(15),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: Colors.grey, width: 2), // Default border color
+          borderRadius: BorderRadius.circular(15),
+        ),
         labelText: "Enter NIC Number",
       ),
     );

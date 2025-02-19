@@ -37,6 +37,11 @@ class ResultScreen extends StatelessWidget {
             // Back button placed below the details but not too low
             ElevatedButton(
               onPressed: () => Get.back(),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15), // Rounded corners
+                ),
+              ),
               child: const Text('GO BACK'),
             ),
           ],
