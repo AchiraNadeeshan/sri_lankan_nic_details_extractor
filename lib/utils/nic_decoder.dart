@@ -14,11 +14,11 @@ class NICDecoder {
     String gender = dayOfYear > 500 ? "Female" : "Male";
     if (dayOfYear > 500) dayOfYear -= 500;
     DateTime birthDate = _calculateDate(birthYear, dayOfYear);
-    int age = DateTime.now().year - birthYear;
+    int age = DateTime.now().year - birthDate.year;
     String voteEligibility = nic.endsWith('V') ? "Can Vote" : "Cannot Vote";
 
     return {
-      "Birth Year": birthYear,
+      "NIC Format": "Old NIC",
       "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
       "Age": age,
@@ -34,10 +34,10 @@ class NICDecoder {
     String gender = dayOfYear > 500 ? "Female" : "Male";
     if (dayOfYear > 500) dayOfYear -= 500;
     DateTime birthDate = _calculateDate(birthYear, dayOfYear);
-    int age = DateTime.now().year - birthYear;
+    int age = DateTime.now().year - birthDate.year;
 
     return {
-      "Birth Year": birthYear,
+      "NIC Format": "New NIC",
       "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
       "Age": age,
