@@ -10,14 +10,19 @@ class InputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Sri Lankan NIC Details Extractor")),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              "Sri Lankan\nNIC Details Extractor",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 50), // Space between title and input field
             NICInputField(controller: controller),
-            const SizedBox(height: 20),
+            const SizedBox(height: 20), // Space between input and button
             ElevatedButton(
               onPressed: controller.decodeNIC,
               child: const Text("EXTRACT"),
