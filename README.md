@@ -17,6 +17,13 @@ A Flutter application that extracts and decodes details from Sri Lankan National
 - State management and navigation handled with **GetX**.
 - Validates NIC input and and handles errors effectively.
 
+## Tech Stack:
+
+- Flutter (UI Framework)
+- Dart (Programming Language)
+- GetX (State Management & Navigation)
+- Material 3 (UI Design)
+
 <!-- ## Screenshots
 
 | Input Screen | Result Screen |
