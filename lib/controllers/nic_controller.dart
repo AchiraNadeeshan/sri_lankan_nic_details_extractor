@@ -5,7 +5,24 @@ import '../utils/nic_decoder.dart';
 class NICController extends GetxController {
   var nicNumber = ''.obs;
   var nicDetails = {}.obs;
-  final textController = TextEditingController(); // Added text controller
+  final textController = TextEditingController();
+
+  @override
+  void onInit() {
+    super.onInit();
+    // Set test NIC and update state
+    String testNIC = "697811249V";
+    textController.text = testNIC;
+    nicNumber.value = testNIC;
+
+    // Listen for changes in textController and update nicNumber accordingly
+    textController.addListener(() {
+      nicNumber.value = textController.text;
+      update(); // Force UI update
+    });
+
+    update(); // Ensure UI refreshes after setting initial value
+  }
 
   void decodeNIC() {
     if (nicNumber.value.isEmpty) {

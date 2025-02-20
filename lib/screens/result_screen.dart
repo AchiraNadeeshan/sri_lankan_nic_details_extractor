@@ -16,7 +16,6 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Title moved down a bit
             Padding(
               padding: const EdgeInsets.only(top: 80.0),
               child: const Text(
@@ -37,14 +36,14 @@ class ResultScreen extends StatelessWidget {
                       ResultCard(title: e.key, value: e.value.toString()))
                   .toList(),
             ),
-            // Add space before the back button
+
             const SizedBox(height: 50), // Space between details and back button
-            // Back button placed below the details but not too low
+
             ElevatedButton(
               onPressed: () => Get.back(),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15), // Rounded corners
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
               child: const Text('GO BACK'),

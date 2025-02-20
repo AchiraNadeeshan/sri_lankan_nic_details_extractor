@@ -28,7 +28,7 @@ class InputScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 80), // Space between title and input field
+            const SizedBox(height: 50), // Space between title and input field
             NICInputField(controller: controller),
             const SizedBox(height: 20), // Space between input field and buttons
             Row(
