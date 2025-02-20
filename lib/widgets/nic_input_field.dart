@@ -7,6 +7,7 @@ class NICInputField extends StatefulWidget {
   const NICInputField({super.key, required this.controller});
 
   @override
+  // ignore: library_private_types_in_public_api
   _NICInputFieldState createState() => _NICInputFieldState();
 }
 
