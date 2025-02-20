@@ -32,7 +32,7 @@ class InputScreen extends StatelessWidget {
                 mainAxisAlignment:
                     MainAxisAlignment.center, // Center content vertically
                 children: [
-                  const SizedBox(height: 50), // Adjusted top padding
+                  const SizedBox(height: 40), // Adjusted top padding
                   const Align(
                     alignment: Alignment.topCenter,
                     child: Text(

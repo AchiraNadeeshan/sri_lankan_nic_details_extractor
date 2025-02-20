@@ -45,7 +45,13 @@ class ResultScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   ),
                 ),
-                child: const Text('GO BACK'),
+                child: const Text(
+                  'GO BACK',
+                  style: TextStyle(
+                    color: Color(0xFF181825),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ],
           ),
