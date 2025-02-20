@@ -19,7 +19,7 @@ class ResultScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 80.0),
+                padding: const EdgeInsets.only(top: 50.0),
                 child: const Text(
                   "NIC Details",
                   style: TextStyle(
