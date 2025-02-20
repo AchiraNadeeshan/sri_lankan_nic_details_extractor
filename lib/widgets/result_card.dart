@@ -12,21 +12,29 @@ class ResultCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15), // Apply rounded corners
       ),
-      elevation: 4, // Optional: Adds elevation to the card
-      child: ListTile(
-        contentPadding:
-            const EdgeInsets.all(0), // No padding for the ListTile itself
-        title: Padding(
-          padding: const EdgeInsets.only(left: 16.0), // Padding for the title
-          child: Text(
+      elevation: 8, // Optional: Adds elevation for better depth
+      shadowColor: Color.fromRGBO(
+          0, 0, 0, 0.2), // Updated way to add shadow with opacity
+      color: Colors.white, // Sets a background color for the card
+      child: Padding(
+        padding: const EdgeInsets.all(12.0), // Padding inside the card
+        child: ListTile(
+          contentPadding: EdgeInsets.zero, // Remove internal ListTile padding
+          title: Text(
             title,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18, // Make title font size larger
+              color: Colors.black87, // Set a dark color for the title
+            ),
           ),
-        ),
-        subtitle: Padding(
-          padding:
-              const EdgeInsets.only(left: 16.0), // Padding for the subtitle
-          child: Text(value),
+          subtitle: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 16, // Make subtitle font size slightly smaller
+              color: Colors.black54, // Lighter color for the value
+            ),
+          ),
         ),
       ),
     );

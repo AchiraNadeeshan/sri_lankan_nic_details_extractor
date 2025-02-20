@@ -41,6 +41,7 @@ class ResultScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Get.back(),
                 style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFA6E3A1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
