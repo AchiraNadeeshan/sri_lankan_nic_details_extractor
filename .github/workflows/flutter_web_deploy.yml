@@ -38,5 +38,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages  # The branch to push the built web project
-        folder: .  # The folder containing the built project
+        folder: build/web  # The folder containing the built project
         token: ${{ secrets.GITHUB_TOKEN }}
