@@ -1,0 +1,10 @@
+# Mark all Dart files as Dart
+*.dart linguist-language=Dart
+
+# Ignore build and auto-generated files from Linguist
+**/build/* linguist-vendored
+**/.dart_tool/* linguist-vendored
+**/ios/Flutter/* linguist-vendored
+**/android/.gradle/* linguist-vendored
+**/android/Flutter/* linguist-vendored
+**/web/* linguist-vendored
