@@ -24,11 +24,11 @@ A Flutter application that extracts and decodes details from Sri Lankan National
 - GetX (State Management & Navigation)
 - Material 3 (UI Design)
 
-<!-- ## Screenshots
+## Screenshots
 
 | Input Screen | Result Screen |
 |-------------|--------------|
-| ![Input Screen](assets/input_screen.png) | ![Result Screen](assets/result_screen.png) | -->
+| ![Input Screen](assets/input_screen.png) | ![Result Screen](assets/result_screen.png) |
 
 ## Installation
 
