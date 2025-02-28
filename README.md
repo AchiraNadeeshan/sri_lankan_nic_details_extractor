@@ -26,9 +26,17 @@ A Flutter application that extracts and decodes details from Sri Lankan National
 
 ## Screenshots
 
-| Input Screen | Result Screen |
-|-------------|--------------|
-| ![Input Screen](assets/input_screen.png) | ![Result Screen](assets/result_screen.png) |
+<table>
+  <tr>
+    <td><strong>Input Screen</strong></td>
+    <td><strong>Result Screen</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/input_screen.png" width="250"></td>
+    <td><img src="assets/result_screen.png" width="250"></td>
+  </tr>
+</table>
+
 
 ## Installation
 
