@@ -3,21 +3,29 @@ import 'package:get/get.dart';
 import '../controllers/nic_controller.dart';
 import '../widgets/result_card.dart';
 
+/// The result screen displaying the extracted NIC details.
+///
+/// This screen retrieves the decoded NIC details from the [NICController]
+/// and presents them using a list of [ResultCard] widgets.
 class ResultScreen extends StatelessWidget {
+  /// Creates an instance of [ResultScreen].
   ResultScreen({super.key});
+
+  /// Controller for managing NIC details.
   final NICController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF181825),
+      backgroundColor: const Color(0xFF181825), // Custom background color
       body: SingleChildScrollView(
-        // Enable scrolling
+        // Enables scrolling for smaller screens
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              /// Title of the result screen.
               Padding(
                 padding: const EdgeInsets.only(top: 50.0),
                 child: const Text(
@@ -29,7 +37,9 @@ class ResultScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 40), // Spacing below the title
+
+              /// List of result cards displaying NIC details.
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: controller.nicDetails.entries
@@ -37,7 +47,9 @@ class ResultScreen extends StatelessWidget {
                         ResultCard(title: e.key, value: e.value.toString()))
                     .toList(),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 50), // Spacing before the button
+
+              /// Button to navigate back to the input screen.
               ElevatedButton(
                 onPressed: () => Get.back(),
                 style: ElevatedButton.styleFrom(
