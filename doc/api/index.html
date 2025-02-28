@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="sri_lankan_nic_details_extractor API docs, for the Dart programming language.">
+  <title>sri_lankan_nic_details_extractor - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">sri_lankan_nic_details_extractor package</li>
+  </ol>
+  <div class="self-name">sri_lankan_nic_details_extractor</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="sri-lankan-nic-details-extractor">Sri Lankan NIC Details Extractor</h1>
+<p>A Flutter application that extracts and decodes details from Sri Lankan National Identity Card (NIC) numbers. The app provides insights such as the date of birth, weekday, age, gender, and voting eligibility based on the NIC number entered.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Extracts details from both old and new NIC formats.</li>
+<li>Displays the following details from the NIC:
+<ul>
+<li>NIC format (Old/New)</li>
+<li>Date of birth</li>
+<li>Weekday of birth</li>
+<li>Age</li>
+<li>Gender</li>
+<li>Serial Number</li>
+<li>Voting eligibility</li>
+</ul>
+</li>
+<li>User-friendly interface designed using Material 3.</li>
+<li>State management and navigation handled with <strong>GetX</strong>.</li>
+<li>Validates NIC input and and handles errors effectively.</li>
+</ul>
+<h2 id="tech-stack">Tech Stack:</h2>
+<ul>
+<li>Flutter (UI Framework)</li>
+<li>Dart (Programming Language)</li>
+<li>GetX (State Management &amp; Navigation)</li>
+<li>Material 3 (UI Design)</li>
+</ul>
+<h2 id="screenshots">Screenshots</h2>
+<table>
+  <tbody><tr>
+    <td><strong>Input Screen</strong></td>
+    <td><strong>Result Screen</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/input_screen.png" width="250"></td>
+    <td><img src="assets/result_screen.png" width="250"></td>
+  </tr>
+</tbody></table>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>
+<p><strong>Clone the repository</strong></p>
+<pre class="language-sh"><code class="language-sh">git clone https://github.com/your-username/sri_lankan_nic_details_extractor.git
+cd sri_lankan_nic_details_extractor
+</code></pre>
+</li>
+<li>
+<p><strong>Install dependencies</strong></p>
+<pre class="language-sh"><code class="language-sh">flutter pub get
+</code></pre>
+</li>
+<li>
+<p><strong>Run the app</strong></p>
+<ul>
+<li>
+<p>To start the application on a connected emulator or device, use:</p>
+<pre class="language-sh"><code class="language-sh">flutter run
+</code></pre>
+</li>
+<li>
+<p>If you have multiple devices/emulators connected, list them first with:</p>
+<pre class="language-sh"><code class="language-sh">flutter devices
+</code></pre>
+</li>
+<li>
+<p>Then, select a specific device to run the app:</p>
+<pre class="language-sh"><code class="language-sh">flutter run -d &lt;device_id&gt;
+</code></pre>
+</li>
+<li>
+<p>Replace &lt;device_id&gt; with the ID shown in the flutter devices output.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="apk-release">APK Release</h2>
+<p>To generate a release APK:</p>
+<pre class="language-sh"><code class="language-sh">flutter build apk --release
+</code></pre>
+<p>The APK will be available in the <code>build/app/outputs/flutter-apk/</code> directory.</p>
+<h2 id="folder-structure">Folder Structure</h2>
+<pre class="language-css"><code class="language-css">lib/
+│── main.dart
+│
+├── bindings/
+│   ├── nic_binding.dart
+│
+├── controllers/
+│   ├── nic_controller.dart
+│
+├── screens/
+│   ├── input_screen.dart
+│   ├── result_screen.dart
+│
+├── widgets/
+│   ├── nic_input_field.dart
+│   ├── result_card.dart
+│
+└── utils/
+    ├── nic_decoder.dart
+</code></pre>
+<ol>
+<li><strong>main.dart</strong> - This file initializes the app, sets up GetX navigation, and defines routes.</li>
+<li><strong>nic_binding.dart</strong> - Binds the controller to GetX dependency injection.</li>
+<li><strong>nic_controller.dart</strong> - Handles user input, validation, and decoding logic.</li>
+<li><strong>input_screen.dart</strong> - The input screen with a text field and decode button.</li>
+<li><strong>result_screen.dart</strong> - Displays extracted NIC details.</li>
+<li><strong>nic_input_field.dart</strong> - Input field widget.</li>
+<li><strong>result_card.dart</strong> - Card widget to display NIC details.</li>
+<li><strong>nic_decoder.dart</strong> - Handles NIC decoding logic.</li>
+</ol>
+<h2 id="contact">Contact</h2>
+<p>If you have any suggestions or find issues, feel free to open an issue in the repository or contact me:</p>
+<p><strong>Email: <a href="mailto:hrachiranadeeshan@gmail.com">hrachiranadeeshan@gmail.com</a></strong></p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="nic_binding">
+  <span class="name"><a href="bindings_nic_binding/bindings_nic_binding-library.html">bindings\nic_binding</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="nic_controller">
+  <span class="name"><a href="controllers_nic_controller/controllers_nic_controller-library.html">controllers\nic_controller</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="main">
+  <span class="name"><a href="main/main-library.html">main</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="input_screen">
+  <span class="name"><a href="screens_input_screen/screens_input_screen-library.html">screens\input_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="result_screen">
+  <span class="name"><a href="screens_result_screen/screens_result_screen-library.html">screens\result_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="nic_decoder">
+  <span class="name"><a href="utils_nic_decoder/utils_nic_decoder-library.html">utils\nic_decoder</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="nic_input_field">
+  <span class="name"><a href="widgets_nic_input_field/widgets_nic_input_field-library.html">widgets\nic_input_field</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="result_card">
+  <span class="name"><a href="widgets_result_card/widgets_result_card-library.html">widgets\result_card</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">sri_lankan_nic_details_extractor package</li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">sri_lankan_nic_details_extractor</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="bindings_nic_binding/bindings_nic_binding-library.html">bindings\nic_binding</a></li>
+      <li><a href="controllers_nic_controller/controllers_nic_controller-library.html">controllers\nic_controller</a></li>
+      <li><a href="main/main-library.html">main</a></li>
+      <li><a href="screens_input_screen/screens_input_screen-library.html">screens\input_screen</a></li>
+      <li><a href="screens_result_screen/screens_result_screen-library.html">screens\result_screen</a></li>
+      <li><a href="utils_nic_decoder/utils_nic_decoder-library.html">utils\nic_decoder</a></li>
+      <li><a href="widgets_nic_input_field/widgets_nic_input_field-library.html">widgets\nic_input_field</a></li>
+      <li><a href="widgets_result_card/widgets_result_card-library.html">widgets\result_card</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    sri_lankan_nic_details_extractor
+      1.0.0+1
+  </span>
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
