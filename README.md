@@ -113,7 +113,14 @@ lib/
 7. **result_card.dart** - Card widget to display NIC details.
 8. **nic_decoder.dart** - Handles NIC decoding logic.
 
+## Dart Documentation  
+
+The full API documentation for this project is available at:  
+
+🔗 **[DartDocs](https://achiranadeeshan.github.io/sri_lankan_nic_details_extractor/dartdoc/)**  
+
 ## Contact
 If you have any suggestions or find issues, feel free to open an issue in the repository or contact me:
 
 **Email: hrachiranadeeshan@gmail.com**
+
