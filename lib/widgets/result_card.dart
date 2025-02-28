@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A customizable card widget to display key-value results.
 class ResultCard extends StatelessWidget {
   final String title;
   final String value;
@@ -9,7 +10,9 @@ class ResultCard extends StatelessWidget {
   final Color borderColor;
   final Color titleColor;
   final Color valueColor;
+  final double elevation;
 
+  /// Constructor with customizable properties.
   const ResultCard({
     super.key,
     required this.title,
@@ -20,50 +23,48 @@ class ResultCard extends StatelessWidget {
     this.borderColor = const Color(0xFF6C7086), // Default border color
     this.titleColor = const Color(0xFFA6E3A1), // Default title color
     this.valueColor = const Color(0xFFCDD6F4), // Default value color
+    this.elevation = 8.0, // Default elevation
   });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      // Centers the card in the parent widget
-      child: SizedBox(
-        width: width, // Adjust card width
-        height: height, // Adjust card height
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20), // Rounded corners
-            side: BorderSide(color: borderColor, width: 2), // Border color
-          ),
-          elevation: 8, // Adds depth
-          shadowColor: const Color.fromRGBO(0, 0, 0, 0.2), // Shadow effect
-          color: cardColor, // Background color of the card
-          child: Padding(
-            padding: const EdgeInsets.all(12.0), // Padding inside the card
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center, // Center vertically
-              crossAxisAlignment:
-                  CrossAxisAlignment.center, // Center horizontally
-              children: [
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: titleColor, // Custom title color
-                  ),
+    double textScale = MediaQuery.textScaleFactorOf(context);
+
+    return SizedBox(
+      width: width, // Adjustable width
+      height: height, // Adjustable height
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20), // Rounded corners
+          side: BorderSide(color: borderColor, width: 2), // Border color
+        ),
+        elevation: elevation, // Customizable elevation
+        shadowColor: Colors.black.withOpacity(0.2), // Dynamic shadow effect
+        color: cardColor, // Background color of the card
+        child: Padding(
+          padding: const EdgeInsets.all(12.0), // Padding inside the card
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+            children: [
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18 * textScale, // Adjusts to user settings
+                  color: titleColor, // Custom title color
                 ),
-                const SizedBox(height: 5), // Space between title & value
-                Text(
-                  value,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: valueColor, // Custom value color
-                  ),
+              ),
+              const SizedBox(height: 5), // Space between title & value
+              Text(
+                value,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16 * textScale, // Adjusts to user settings
+                  color: valueColor, // Custom value color
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
