@@ -32,6 +32,11 @@ jobs:
     - name: Generate Dart Documentation
       run: dart doc
 
+    - name: Copy assets to DartDocs
+      run: |
+        mkdir -p doc/api/assets
+        cp -r assets/* doc/api/assets/
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
