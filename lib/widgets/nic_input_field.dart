@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import '../controllers/nic_controller.dart';
 
 /// A custom text input field for entering a Sri Lankan NIC number.
+///
+/// This widget provides a text field with a styled border and dynamic
+/// focus handling. It automatically converts input to uppercase and
+/// updates the [NICController].
 class NICInputField extends StatefulWidget {
-  /// The NICController instance to manage input.
+  /// The controller that manages the NIC input.
   final NICController controller;
 
-  /// Constructor with required NICController.
+  /// Creates an [NICInputField] with a required [controller].
   const NICInputField({super.key, required this.controller});
 
   @override
@@ -14,6 +18,7 @@ class NICInputField extends StatefulWidget {
 }
 
 class _NICInputFieldState extends State<NICInputField> {
+  /// Focus node to track focus changes.
   final FocusNode _focusNode = FocusNode();
 
   @override
@@ -32,7 +37,7 @@ class _NICInputFieldState extends State<NICInputField> {
 
   /// Handles focus changes and triggers UI updates.
   void _handleFocusChange() {
-    setState(() {}); // Trigger rebuild when focus changes
+    setState(() {}); // Rebuild widget when focus state changes
   }
 
   @override
