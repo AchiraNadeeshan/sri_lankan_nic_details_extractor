@@ -1,4 +1,4 @@
-name: Deploy Flutter Web to GitHub Pages
+name: Deploy Flutter Web & DartDocs to GitHub Pages
 
 on:
   push:
@@ -6,20 +6,20 @@ on:
       - main  # Trigger deployment on push to the main branch
   pull_request:
     branches:
-      - main  # Also trigger deployment on pull request merge to main
+      - main  # Trigger deployment on pull request merge to main
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.27.4'  # Specify the Flutter version explicitly
+        flutter-version: '3.27.4'  # Specify Flutter version explicitly
         channel: stable
         architecture: x64
 
@@ -29,8 +29,19 @@ jobs:
     - name: Build Flutter Web
       run: flutter build web
 
+    - name: Generate Dart Documentation
+      run: dart doc
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build/web
+        destination_dir: ./web  # Store Flutter Web under `web/` in gh-pages
+
+    - name: Deploy Dart Documentation
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc/api
+        destination_dir: ./dartdoc  # Store DartDocs under `dartdoc/` in gh-pages
