@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import '../controllers/nic_controller.dart';
 
+/// A custom text input field for entering a Sri Lankan NIC number.
 class NICInputField extends StatefulWidget {
+  /// The NICController instance to manage input.
   final NICController controller;
 
+  /// Constructor with required NICController.
   const NICInputField({super.key, required this.controller});
 
   @override
-  // ignore: library_private_types_in_public_api
   _NICInputFieldState createState() => _NICInputFieldState();
 }
 
@@ -18,16 +20,19 @@ class _NICInputFieldState extends State<NICInputField> {
   void initState() {
     super.initState();
     // Listen for focus changes
-    _focusNode.addListener(() {
-      setState(() {}); // Trigger rebuild when focus changes
-    });
+    _focusNode.addListener(_handleFocusChange);
   }
 
   @override
   void dispose() {
-    _focusNode.removeListener(() {});
-    _focusNode.dispose(); // Clean up focus node
+    _focusNode.removeListener(_handleFocusChange);
+    _focusNode.dispose(); // Properly clean up focus node
     super.dispose();
+  }
+
+  /// Handles focus changes and triggers UI updates.
+  void _handleFocusChange() {
+    setState(() {}); // Trigger rebuild when focus changes
   }
 
   @override
@@ -44,15 +49,15 @@ class _NICInputFieldState extends State<NICInputField> {
         ),
         decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey, width: 2),
+            borderSide: const BorderSide(color: Colors.grey, width: 2),
             borderRadius: BorderRadius.circular(20),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: const Color(0xFFCDD6F4), width: 2),
+            borderSide: const BorderSide(color: Color(0xFFCDD6F4), width: 2),
             borderRadius: BorderRadius.circular(15),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey, width: 2),
+            borderSide: const BorderSide(color: Colors.grey, width: 2),
             borderRadius: BorderRadius.circular(15),
           ),
           labelText: "Enter NIC Number",
