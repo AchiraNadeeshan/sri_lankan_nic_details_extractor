@@ -1,10 +1,5 @@
-# Mark all Dart files as Dart
-*.dart linguist-language=Dart
+# Ignore all files from linguist statistics by default
+* linguist-generated
 
-# Ignore build and auto-generated files from Linguist
-**/build/* linguist-vendored
-**/.dart_tool/* linguist-vendored
-**/ios/Flutter/* linguist-vendored
-**/android/.gradle/* linguist-vendored
-**/android/Flutter/* linguist-vendored
-**/web/* linguist-vendored
+# Override the linguist to count dart files for statistics 
+*.dart -linguist-generated
