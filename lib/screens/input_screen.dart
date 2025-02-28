@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/nic_controller.dart';
 import '../widgets/nic_input_field.dart';
-import 'package:url_launcher/url_launcher.dart'; // Add this import
+import 'package:url_launcher/url_launcher.dart'; // Import for launching URLs
 
+/// The main input screen of the NIC Details Extractor application.
+///
+/// This screen provides an input field for entering a NIC number,
+/// buttons for extracting/resetting details, and a footer with
+/// developer information.
 class InputScreen extends StatelessWidget {
+  /// Creates an instance of [InputScreen].
   InputScreen({super.key});
+
+  /// Controller for managing NIC input and extraction logic.
   final NICController controller = Get.find();
 
-  // Function to launch URL
+  /// Launches a URL in an external browser.
+  ///
+  /// This method attempts to open the GitHub profile of the developer.
+  /// If the URL cannot be launched, an exception is thrown.
   void _launchURL() async {
     final Uri url = Uri.parse('https://github.com/AchiraNadeeshan');
 
@@ -33,6 +44,8 @@ class InputScreen extends StatelessWidget {
                     MainAxisAlignment.center, // Center content vertically
                 children: [
                   const SizedBox(height: 40), // Adjusted top padding
+
+                  /// Title of the application displayed at the top.
                   const Align(
                     alignment: Alignment.topCenter,
                     child: Text(
@@ -46,9 +59,13 @@ class InputScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 40), // Adjust spacing
+
+                  /// NIC input field for entering the NIC number.
                   NICInputField(controller: controller),
                   const SizedBox(
                       height: 20), // Space between input field and buttons
+
+                  /// Buttons for extracting NIC details and resetting input.
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -91,7 +108,8 @@ class InputScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // "Developed by" section at the bottom
+
+            /// "Developed by" section at the bottom with a clickable GitHub link.
             Column(
               children: [
                 const Text(
@@ -105,8 +123,7 @@ class InputScreen extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFFA6E3A1),
                       fontSize: 16,
-                      decoration: TextDecoration
-                          .underline, // Optional: Underline for the link
+                      decoration: TextDecoration.underline,
                     ),
                   ),
                 ),
