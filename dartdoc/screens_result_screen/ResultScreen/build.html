@@ -113,14 +113,15 @@ and</li>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
   return Scaffold(
-    backgroundColor: const Color(0xFF181825),
+    backgroundColor: const Color(0xFF181825), &#47;&#47; Custom background color
     body: SingleChildScrollView(
-      &#47;&#47; Enable scrolling
+      &#47;&#47; Enables scrolling for smaller screens
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            &#47;&#47;&#47; Title of the result screen.
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: const Text(
@@ -132,7 +133,9 @@ Widget build(BuildContext context) {
                 ),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 40), &#47;&#47; Spacing below the title
+
+            &#47;&#47;&#47; List of result cards displaying NIC details.
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: controller.nicDetails.entries
@@ -140,7 +143,9 @@ Widget build(BuildContext context) {
                       ResultCard(title: e.key, value: e.value.toString()))
                   .toList(),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 50), &#47;&#47; Spacing before the button
+
+            &#47;&#47;&#47; Button to navigate back to the input screen.
             ElevatedButton(
               onPressed: () =&gt; Get.back(),
               style: ElevatedButton.styleFrom(

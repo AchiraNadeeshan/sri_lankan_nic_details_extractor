@@ -76,6 +76,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 void dependencies() {
+  &#47;&#47;&#47; Lazily puts an instance of [NICController] into memory when needed.
   Get.lazyPut&lt;NICController&gt;(() =&gt; NICController());
 }</code></pre>
 </section>

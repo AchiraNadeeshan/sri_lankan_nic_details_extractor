@@ -119,11 +119,12 @@ Widget build(BuildContext context) {
       useMaterial3: true,
       colorSchemeSeed: Colors.blue,
     ),
-    initialBinding: NICBinding(),
-    initialRoute: &#39;&#47;&#39;,
+    initialBinding: NICBinding(), &#47;&#47; Binds dependencies using GetX
+    initialRoute: &#39;&#47;&#39;, &#47;&#47; Sets the initial route of the app
     getPages: [
-      GetPage(name: &#39;&#47;&#39;, page: () =&gt; InputScreen()),
-      GetPage(name: &#39;&#47;result&#39;, page: () =&gt; ResultScreen()),
+      GetPage(name: &#39;&#47;&#39;, page: () =&gt; InputScreen()), &#47;&#47; Home screen route
+      GetPage(
+          name: &#39;&#47;result&#39;, page: () =&gt; ResultScreen()), &#47;&#47; Result screen route
     ],
   );
 }</code></pre>

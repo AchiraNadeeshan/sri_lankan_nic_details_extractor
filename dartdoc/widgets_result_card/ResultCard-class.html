@@ -56,6 +56,12 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>A customizable card widget used to display key-value results.</p>
+<p>The <a href="../widgets_result_card/ResultCard-class.html">ResultCard</a> widget is designed with a predefined width, height,
+and customizable styling options such as colors and border properties.
+It is particularly useful for displaying extracted NIC details in the app.</p>
+</section>
 
 
     <section>
@@ -94,10 +100,10 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="ResultCard" class="callable">
-          <span class="name"><a href="../widgets_result_card/ResultCard/ResultCard.html">ResultCard</a></span><span class="signature">({<span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-title"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">title</span>, </span><span class="parameter" id="-param-value"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-width"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">width</span> = <span class="default-value">400</span>, </span><span class="parameter" id="-param-height"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">height</span> = <span class="default-value">90</span>, </span><span class="parameter" id="-param-cardColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">cardColor</span> = <span class="default-value">const Color(0xFF181825)</span>, </span><span class="parameter" id="-param-borderColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">borderColor</span> = <span class="default-value">const Color(0xFF6C7086)</span>, </span><span class="parameter" id="-param-titleColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">titleColor</span> = <span class="default-value">const Color(0xFFA6E3A1)</span>, </span><span class="parameter" id="-param-valueColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">valueColor</span> = <span class="default-value">const Color(0xFFCDD6F4)</span></span>})</span>
+          <span class="name"><a href="../widgets_result_card/ResultCard/ResultCard.html">ResultCard</a></span><span class="signature">({<span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-title"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">title</span>, </span><span class="parameter" id="-param-value"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">value</span>, </span><span class="parameter" id="-param-width"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">width</span> = <span class="default-value">400</span>, </span><span class="parameter" id="-param-height"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">height</span> = <span class="default-value">90</span>, </span><span class="parameter" id="-param-cardColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">cardColor</span> = <span class="default-value">const Color(0xFF181825)</span>, </span><span class="parameter" id="-param-borderColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">borderColor</span> = <span class="default-value">const Color(0xFF6C7086)</span>, </span><span class="parameter" id="-param-titleColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">titleColor</span> = <span class="default-value">const Color(0xFFA6E3A1)</span>, </span><span class="parameter" id="-param-valueColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">valueColor</span> = <span class="default-value">const Color(0xFFCDD6F4)</span>, </span><span class="parameter" id="-param-elevation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">elevation</span> = <span class="default-value">8.0</span></span>})</span>
         </dt>
         <dd>
-          
+          Creates a <a href="../widgets_result_card/ResultCard-class.html">ResultCard</a> with customizable properties.
             <div class="constructor-modifier features">const</div>
         </dd>
     </dl>
@@ -115,7 +121,7 @@
 
 </dt>
 <dd>
-  
+  The border color of the card (default is <code>Color(0xFF6C7086)</code>).
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -127,7 +133,19 @@
 
 </dt>
 <dd>
+  The background color of the card (default is <code>Color(0xFF181825)</code>).
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="elevation" class="property">
+  <span class="name"><a href="../widgets_result_card/ResultCard/elevation.html">elevation</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
   
+
+</dt>
+<dd>
+  The elevation of the card, which determines its shadow depth (default is <code>8.0</code>).
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -151,7 +169,7 @@
 
 </dt>
 <dd>
-  
+  The height of the card (default is <code>90</code>).
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -235,7 +253,7 @@
 
 </dt>
 <dd>
-  
+  The title of the card, usually representing the data label.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -247,7 +265,7 @@
 
 </dt>
 <dd>
-  
+  The color of the title text (default is <code>Color(0xFFA6E3A1)</code>).
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -259,7 +277,7 @@
 
 </dt>
 <dd>
-  
+  The value associated with the title, which will be displayed below the title.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -271,7 +289,7 @@
 
 </dt>
 <dd>
-  
+  The color of the value text (default is <code>Color(0xFFCDD6F4)</code>).
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -283,7 +301,7 @@
 
 </dt>
 <dd>
-  
+  The width of the card (default is <code>400</code>).
   <div class="features"><span class="feature">final</span></div>
 
 </dd>

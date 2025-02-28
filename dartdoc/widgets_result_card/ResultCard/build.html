@@ -112,46 +112,44 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  return Center(
-    &#47;&#47; Centers the card in the parent widget
-    child: SizedBox(
-      width: width, &#47;&#47; Adjust card width
-      height: height, &#47;&#47; Adjust card height
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20), &#47;&#47; Rounded corners
-          side: BorderSide(color: borderColor, width: 2), &#47;&#47; Border color
-        ),
-        elevation: 8, &#47;&#47; Adds depth
-        shadowColor: const Color.fromRGBO(0, 0, 0, 0.2), &#47;&#47; Shadow effect
-        color: cardColor, &#47;&#47; Background color of the card
-        child: Padding(
-          padding: const EdgeInsets.all(12.0), &#47;&#47; Padding inside the card
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, &#47;&#47; Center vertically
-            crossAxisAlignment:
-                CrossAxisAlignment.center, &#47;&#47; Center horizontally
-            children: [
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: titleColor, &#47;&#47; Custom title color
-                ),
+  &#47;&#47; Adjusts text size based on system preferences
+  double textScale = MediaQuery.textScaleFactorOf(context);
+
+  return SizedBox(
+    width: width,
+    height: height,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: borderColor, width: 2),
+      ),
+      elevation: elevation,
+      shadowColor: Colors.black.withOpacity(0.2),
+      color: cardColor,
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18 * textScale,
+                color: titleColor,
               ),
-              const SizedBox(height: 5), &#47;&#47; Space between title &amp; value
-              Text(
-                value,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: valueColor, &#47;&#47; Custom value color
-                ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              value,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16 * textScale,
+                color: valueColor,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     ),

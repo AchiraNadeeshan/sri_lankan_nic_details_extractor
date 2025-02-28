@@ -124,6 +124,8 @@ Widget build(BuildContext context) {
                   MainAxisAlignment.center, &#47;&#47; Center content vertically
               children: [
                 const SizedBox(height: 40), &#47;&#47; Adjusted top padding
+
+                &#47;&#47;&#47; Title of the application displayed at the top.
                 const Align(
                   alignment: Alignment.topCenter,
                   child: Text(
@@ -137,9 +139,13 @@ Widget build(BuildContext context) {
                   ),
                 ),
                 const SizedBox(height: 40), &#47;&#47; Adjust spacing
+
+                &#47;&#47;&#47; NIC input field for entering the NIC number.
                 NICInputField(controller: controller),
                 const SizedBox(
                     height: 20), &#47;&#47; Space between input field and buttons
+
+                &#47;&#47;&#47; Buttons for extracting NIC details and resetting input.
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -182,7 +188,8 @@ Widget build(BuildContext context) {
               ],
             ),
           ),
-          &#47;&#47; &quot;Developed by&quot; section at the bottom
+
+          &#47;&#47;&#47; &quot;Developed by&quot; section at the bottom with a clickable GitHub link.
           Column(
             children: [
               const Text(
@@ -196,8 +203,7 @@ Widget build(BuildContext context) {
                   style: TextStyle(
                     color: Color(0xFFA6E3A1),
                     fontSize: 16,
-                    decoration: TextDecoration
-                        .underline, &#47;&#47; Optional: Underline for the link
+                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),

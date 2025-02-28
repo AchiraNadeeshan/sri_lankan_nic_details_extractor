@@ -66,9 +66,17 @@
 <li><span class="parameter" id="-param-borderColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">borderColor</span> = <span class="default-value">const Color(0xFF6C7086)</span>, </span></li>
 <li><span class="parameter" id="-param-titleColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">titleColor</span> = <span class="default-value">const Color(0xFFA6E3A1)</span>, </span></li>
 <li><span class="parameter" id="-param-valueColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">valueColor</span> = <span class="default-value">const Color(0xFFCDD6F4)</span>, </span></li>
+<li><span class="parameter" id="-param-elevation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">elevation</span> = <span class="default-value">8.0</span>, </span></li>
 </ol>})
     </section>
     
+<section class="desc markdown">
+  <p>Creates a <a href="../../widgets_result_card/ResultCard-class.html">ResultCard</a> with customizable properties.</p>
+<ul>
+<li>The <code>title</code> and <code>value</code> are required.</li>
+<li>Optional parameters allow customization of size, colors, and elevation.</li>
+</ul>
+</section>
 
 
     
@@ -78,12 +86,13 @@
   super.key,
   required this.title,
   required this.value,
-  this.width = 400, &#47;&#47; Default width
-  this.height = 90, &#47;&#47; Default height
-  this.cardColor = const Color(0xFF181825), &#47;&#47; Default card color
-  this.borderColor = const Color(0xFF6C7086), &#47;&#47; Default border color
-  this.titleColor = const Color(0xFFA6E3A1), &#47;&#47; Default title color
-  this.valueColor = const Color(0xFFCDD6F4), &#47;&#47; Default value color
+  this.width = 400,
+  this.height = 90,
+  this.cardColor = const Color(0xFF181825),
+  this.borderColor = const Color(0xFF6C7086),
+  this.titleColor = const Color(0xFFA6E3A1),
+  this.valueColor = const Color(0xFFCDD6F4),
+  this.elevation = 8.0,
 });</code></pre>
 </section>
 

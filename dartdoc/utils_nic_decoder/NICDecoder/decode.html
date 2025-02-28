@@ -65,6 +65,17 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Decodes a given NIC number and returns a map of extracted details.</p>
+<ul>
+<li>Supports both old (10-digit) and new (12-digit) NIC formats.</li>
+<li>If the NIC is invalid, returns <code>null</code>.</li>
+</ul>
+<p>Example usage:</p>
+<pre class="language-dart"><code class="language-dart">var details = NICDecoder.decode("200012345678");
+print(details);
+</code></pre>
+</section>
 
 
     
