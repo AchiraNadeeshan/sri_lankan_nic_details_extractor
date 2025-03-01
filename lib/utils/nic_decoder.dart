@@ -52,6 +52,7 @@ class NICDecoder {
     String voteEligibility = nic.endsWith('V') ? "Can Vote" : "Cannot Vote";
 
     return {
+      "NIC Number": nic,
       "NIC Format": "Old NIC",
       "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
