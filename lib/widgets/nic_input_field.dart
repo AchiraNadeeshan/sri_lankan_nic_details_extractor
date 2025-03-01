@@ -48,6 +48,7 @@ class _NICInputFieldState extends State<NICInputField> {
         controller: widget.controller.textController,
         onChanged: (value) =>
             widget.controller.nicNumber.value = value.toUpperCase(),
+        onSubmitted: (_) => widget.controller.decodeNIC(), // Handle Enter key
         focusNode: _focusNode,
         style: TextStyle(
           color: _focusNode.hasFocus ? const Color(0xFFCDD6F4) : Colors.grey,
