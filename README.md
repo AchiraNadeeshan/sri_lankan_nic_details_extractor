@@ -1,5 +1,7 @@
 # Sri Lankan NIC Details Extractor
+[About](#about) · [Features](#features) · [Tech Stack](#tech-stack) · [Screenshots](#screenshots) · [Installation](#installation) · [Insights](#folder-structure) · [Documentation](#dart-documentation) · [Contact](#contact)
 
+## About
 A Flutter application that extracts and decodes details from Sri Lankan National Identity Card (NIC) numbers. The app provides insights such as the date of birth, weekday, age, gender, and voting eligibility based on the NIC number entered.
 
 ## Features
@@ -14,15 +16,16 @@ A Flutter application that extracts and decodes details from Sri Lankan National
   - Serial Number
   - Voting eligibility
 - User-friendly interface designed using Material 3.
-- State management and navigation handled with **GetX**.
+- State management and navigation handled with GetX.
 - Validates NIC input and and handles errors effectively.
 
-## Tech Stack:
+## Tech Stack
 
 - Flutter (UI Framework)
 - Dart (Programming Language)
 - GetX (State Management & Navigation)
 - Material 3 (UI Design)
+- URL Launcher (Launch URLs in the browser or external apps)
 
 ## Screenshots
 
@@ -73,7 +76,7 @@ A Flutter application that extracts and decodes details from Sri Lankan National
         ```
     - Replace <device_id> with the ID shown in the flutter devices output.
 
-## APK Release
+### APK Release
 To generate a release APK:
 
 ```sh
