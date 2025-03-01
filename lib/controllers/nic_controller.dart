@@ -30,6 +30,9 @@ class NICController extends GetxController {
         backgroundColor: const Color(0xFFA6E3A1), // Custom background color
         colorText: const Color(0xFF11111B), // Custom text color
         icon: const Icon(Icons.error, color: Color(0xFF11111B)), // Error icon
+        margin: const EdgeInsets.only(bottom: 20), // Adjust bottom margin
+        snackStyle: SnackStyle.FLOATING,
+        maxWidth: 400, // Set snackbar width
       );
       return;
     }
@@ -44,6 +47,9 @@ class NICController extends GetxController {
         colorText: const Color(0xFF11111B), // Custom text color
         icon:
             const Icon(Icons.warning, color: Color(0xFF11111B)), // Warning icon
+        margin: const EdgeInsets.only(bottom: 20), // Adjust bottom margin
+        snackStyle: SnackStyle.FLOATING,
+        maxWidth: 400, // Set snackbar width
       );
       return;
     }
