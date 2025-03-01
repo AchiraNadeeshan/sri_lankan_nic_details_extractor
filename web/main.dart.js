@@ -22673,7 +22673,7 @@ l=A.ng(o)-A.ng(p)
 if(m<0){--n
 m+=12}if(l<0){--m
 l+=A.ng(A.afY(A.ni(o),A.nh(o),0))}k=B.d.qu(a,"V")?"Can Vote":"Cannot Vote"
-return A.ag(["NIC Format","Old NIC","Date of Birth",A.alb(p),"Weekday",A.alc(A.alC(p)),"Age",""+n+" years, "+m+" months, "+l+" days","Gender",q,"Serial Number",B.d.W(a,5,9),"Voting Eligibility",k],t.N,t.z)}else{if(h===12){h=A.hg("^\\d{12}$",!0,!1)
+return A.ag(["NIC Number",a,"NIC Format","Old NIC","Date of Birth",A.alb(p),"Weekday",A.alc(A.alC(p)),"Age",""+n+" years, "+m+" months, "+l+" days","Gender",q,"Serial Number",B.d.W(a,5,9),"Voting Eligibility",k],t.N,t.z)}else{if(h===12){h=A.hg("^\\d{12}$",!0,!1)
 h=h.b.test(a)}else h=!1
 if(h){j=A.en(B.d.W(a,0,4),i)
 r=A.en(B.d.W(a,4,7),i)
