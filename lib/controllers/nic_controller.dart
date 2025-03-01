@@ -23,15 +23,28 @@ class NICController extends GetxController {
   /// - If valid, it extracts the details and navigates to the result screen.
   void decodeNIC() {
     if (nicNumber.value.isEmpty) {
-      Get.snackbar("Error", "Please enter a NIC number",
-          snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar(
+        "Error",
+        "Please enter a NIC number",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: const Color(0xFFA6E3A1), // Custom background color
+        colorText: const Color(0xFF11111B), // Custom text color
+        icon: const Icon(Icons.error, color: Color(0xFF11111B)), // Error icon
+      );
       return;
     }
 
     var result = NICDecoder.decode(nicNumber.value);
     if (result == null) {
-      Get.snackbar("Invalid NIC", "Enter a valid NIC number",
-          snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar(
+        "Invalid NIC",
+        "Enter a valid NIC number",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: const Color(0xFFA6E3A1), // Custom background color
+        colorText: const Color(0xFF11111B), // Custom text color
+        icon:
+            const Icon(Icons.warning, color: Color(0xFF11111B)), // Warning icon
+      );
       return;
     }
 
