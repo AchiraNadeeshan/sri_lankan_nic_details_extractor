@@ -92,6 +92,7 @@ class NICDecoder {
     }
 
     return {
+      "NIC Number": nic,
       "NIC Format": "New NIC",
       "Date of Birth": _formatDate(birthDate),
       "Weekday": _getWeekdayName(birthDate.weekday),
