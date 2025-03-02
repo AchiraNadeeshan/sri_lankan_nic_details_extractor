@@ -79,15 +79,34 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">void decodeNIC() {
   if (nicNumber.value.isEmpty) {
-    Get.snackbar(&quot;Error&quot;, &quot;Please enter a NIC number&quot;,
-        snackPosition: SnackPosition.BOTTOM);
+    Get.snackbar(
+      &quot;Error&quot;,
+      &quot;Please enter a NIC number&quot;,
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: const Color(0xFFA6E3A1), &#47;&#47; Custom background color
+      colorText: const Color(0xFF11111B), &#47;&#47; Custom text color
+      icon: const Icon(Icons.error, color: Color(0xFF11111B)), &#47;&#47; Error icon
+      margin: const EdgeInsets.only(bottom: 20), &#47;&#47; Adjust bottom margin
+      snackStyle: SnackStyle.FLOATING,
+      maxWidth: 400, &#47;&#47; Set snackbar width
+    );
     return;
   }
 
   var result = NICDecoder.decode(nicNumber.value);
   if (result == null) {
-    Get.snackbar(&quot;Invalid NIC&quot;, &quot;Enter a valid NIC number&quot;,
-        snackPosition: SnackPosition.BOTTOM);
+    Get.snackbar(
+      &quot;Invalid NIC&quot;,
+      &quot;Enter a valid NIC number&quot;,
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: const Color(0xFFA6E3A1), &#47;&#47; Custom background color
+      colorText: const Color(0xFF11111B), &#47;&#47; Custom text color
+      icon:
+          const Icon(Icons.warning, color: Color(0xFF11111B)), &#47;&#47; Warning icon
+      margin: const EdgeInsets.only(bottom: 20), &#47;&#47; Adjust bottom margin
+      snackStyle: SnackStyle.FLOATING,
+      maxWidth: 400, &#47;&#47; Set snackbar width
+    );
     return;
   }
 
