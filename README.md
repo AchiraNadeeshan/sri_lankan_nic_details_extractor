@@ -4,7 +4,7 @@
 ---
 
 ## About
-A Flutter application that extracts and decodes details from Sri Lankan National Identity Card (NIC) numbers. The app provides insights such as the date of birth, weekday, age, gender, and voting eligibility based on the NIC number entered.
+A Flutter application that extracts and decodes details from Sri Lankan National Identity Card ([NIC](https://en.wikipedia.org/wiki/National_identity_card_(Sri_Lanka)#NIC_number)) numbers. The app provides insights such as the date of birth, weekday, age, gender, and voting eligibility based on the NIC number entered.
 
 ## Features
 
